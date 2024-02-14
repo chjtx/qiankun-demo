@@ -1,5 +1,8 @@
 <script setup>
+import { useRoute } from 'vue-router'
 import LeftMenu from './LeftMenu.vue'
+
+const route = useRoute()
 </script>
 
 <template>
@@ -11,6 +14,7 @@ import LeftMenu from './LeftMenu.vue'
       </el-aside>
       <el-main>
         <router-view></router-view>
+        <div id="container" v-show="route.path.indexOf('/app') === 0"></div>
       </el-main>
     </el-container>
   </el-container>
