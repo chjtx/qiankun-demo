@@ -1,5 +1,5 @@
 <script setup>
-import Layout from './components/Layout.vue'
+import MainLayout from './components/MainLayout.vue'
 import { ElConfigProvider } from 'element-plus'
 
 const size = 'small'
@@ -8,6 +8,6 @@ const zIndex = 3000
 
 <template>
   <ElConfigProvider :size="size" :z-index="zIndex">
-    <Layout />
+    <MainLayout />
   </ElConfigProvider>
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import Menu from './Menu.vue'
+import LeftMenu from './LeftMenu.vue'
 </script>
 
 <template>
@@ -7,10 +7,10 @@ import Menu from './Menu.vue'
     <el-header class="bg-cyan-900 text-white flex items-center">乾坤演示</el-header>
     <el-container>
       <el-aside width="200px">
-        <Menu></Menu>
+        <LeftMenu></LeftMenu>
       </el-aside>
       <el-main>
-        <el-button type="primary">按钮</el-button>
+        <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
