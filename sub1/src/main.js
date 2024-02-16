@@ -1,4 +1,4 @@
-import './public-path.js'
+// import './public-path.js'
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
@@ -14,24 +14,30 @@ function render(props = {}) {
   // })
 
   instance = createApp(App)
-  instance.mount(container ? container.querySelector('#app') : '#app')
+  instance.mount(container ? container.querySelector('#sub1') : '#sub1')
 }
 
 // 独立运行时
-if (!window.__POWERED_BY_QIANKUN__) {
+if (window['sub1'] && window['sub1'].props) {
+  window['sub1'].render = render
+  render(window['sub1'].props)
+} else {
   render()
 }
 
-export async function bootstrap() {
-  console.log('[vue] vue app bootstraped')
-}
-export async function mount(props) {
-  console.log('[vue] props from main framework', props)
-  render(props)
-}
-export async function unmount() {
-  instance.$destroy()
-  instance.$el.innerHTML = ''
-  instance = null
-  router = null
-}
+// ((global) => {
+//   global['sub1'] = {
+//     bootstrap: () => {
+//       console.log('purehtml bootstrap');
+//       return Promise.resolve();
+//     },
+//     mount: (props) => {
+//       console.log('purehtml mount');
+//       return render(props);
+//     },
+//     unmount: () => {
+//       console.log('purehtml unmount');
+//       return Promise.resolve();
+//     },
+//   };
+// })(window)

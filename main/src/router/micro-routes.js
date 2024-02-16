@@ -1,7 +1,7 @@
 const routes = [
   {
     name: 'sub1',
-    entry: '//localhost:6001',
+    entry: '//localhost:6001/',
     container: '#container',
     activeRule: '/app/sub1',
   },
