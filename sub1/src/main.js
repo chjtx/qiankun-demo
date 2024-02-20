@@ -1,19 +1,21 @@
-// import './public-path.js'
 import { createApp } from 'vue'
 import './style.css'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
+import routes from './routes.js'
 
 let router = null
 let instance = null
 function render(props = {}) {
   const { container } = props
-  // router = new VueRouter({
-  //   base: window.__POWERED_BY_QIANKUN__ ? '/app-vue/' : '/',
-  //   mode: 'history',
-  //   routes,
-  // })
+  router = createRouter({
+    base: window.__POWERED_BY_QIANKUN__ ? '/app/sub1' : '',
+    history: createWebHashHistory(),
+    routes,
+  })
 
   instance = createApp(App)
+  instance.use(router)
   instance.mount(container ? container.querySelector('#sub1') : '#sub1')
 }
 

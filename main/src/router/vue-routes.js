@@ -18,6 +18,10 @@ const routes = [
       },
     ]
   },
+  {
+    path: '/app/:any*',
+    component: () => One
+  }
 ]
 
 export default routes
