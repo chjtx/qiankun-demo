@@ -10,7 +10,6 @@ let instance = null
 function render(props = {}) {
   const { container } = props
   router = createRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? `/app/${appName}` : '',
     history: createWebHashHistory(),
     routes,
   })

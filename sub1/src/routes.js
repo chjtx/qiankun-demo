@@ -1,14 +1,18 @@
 import Page1 from './components/Page1.vue'
 import Page2 from './components/Page2.vue'
 
+function addPrefix(path) {
+  return `/app/${import.meta.env.VITE_APP_NAME}/${path}`
+}
+
 const routes = [
-  { path: '/', redirect: '/page1' },
+  { path: '/', redirect: addPrefix('page1') },
   {
-    path: '/page1',
+    path: addPrefix('page1'),
     component: Page1,
   },
   {
-    path: '/page2',
+    path: addPrefix('page2'),
     component: Page2,
   },
 ]

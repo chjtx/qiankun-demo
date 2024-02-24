@@ -1,18 +1,18 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { registerMicroApps, start } from 'qiankun'
 import { vueRoutes, microRoutes } from './router'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: vueRoutes,
 })
 
 registerMicroApps(microRoutes)
 start({
-  getTemplate(tpl) {console.log(tpl)
+  getTemplate(tpl) {
     const name = /data-qiankun_microapp_name=['"]([^'"]+)['"]/.exec(tpl)?.[1]
     if (name) {
       // 动态注册微应用生命周期
@@ -39,7 +39,7 @@ start({
   },
   async fetch(url, ...args) {
     // 使用script标签加载脚本
-    if (url.indexOf('@vite/client') > -1 || url.indexOf('.js') > -1) {
+    if (import.meta.env.DEV && (url.indexOf('@vite/client') > -1 || url.indexOf('.js') > -1)) {
       const script = document.createElement('script')
       script.type = 'module'
       script.src = url

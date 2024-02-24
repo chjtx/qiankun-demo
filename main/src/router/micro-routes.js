@@ -1,15 +1,15 @@
 const routes = [
   {
     name: 'sub1',
-    entry: '//localhost:6001/',
+    entry: import.meta.env.PROD ? '../sub1/' : '//localhost:6001/',
     container: '#container',
-    activeRule: location => location.pathname.startsWith('/app/sub1'),
+    activeRule: location => location.hash.startsWith('#/app/sub1'),
   },
   {
     name: 'sub2',
-    entry: '//localhost:6002',
+    entry: import.meta.env.PROD ? '../sub2/' : '//localhost:6002',
     container: '#container',
-    activeRule: location => location.pathname.startsWith('/app/sub2'),
+    activeRule: location => location.hash.startsWith('#/app/sub2'),
   },
 ]
 
