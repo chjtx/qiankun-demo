@@ -5,8 +5,8 @@ const router = useRouter()
 
 function handleSelect(key) {
   // TODO:使用push会导致切换微应用菜单也会重载整个微应用
-  // router.push(key)
-  router.replace(key)
+  router.push(key)
+  // router.replace(key)
 }
 </script>
 
@@ -30,6 +30,6 @@ function handleSelect(key) {
       <el-menu-item index="/app/sub1/#page1">子菜单1-1</el-menu-item>
       <el-menu-item index="/app/sub1/#page2">子菜单1-2</el-menu-item>
     </el-sub-menu>
-    <el-menu-item index="/app/sub2">子应用2</el-menu-item>
+    <el-menu-item index="/app/sub2/#page1">子应用2</el-menu-item>
   </el-menu>
 </template>

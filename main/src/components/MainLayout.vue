@@ -13,8 +13,8 @@ const route = useRoute()
         <LeftMenu></LeftMenu>
       </el-aside>
       <el-main>
-        <router-view v-show="route.path.startsWith('/main')"></router-view>
-        <div id="container" v-show="route.path.startsWith('/app')"></div>
+        <router-view></router-view>
+        <div id="container" ></div>
       </el-main>
     </el-container>
   </el-container>
