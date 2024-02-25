@@ -1,20 +1,23 @@
+import { SubRouterView } from 'common'
 import Page1 from './components/Page1.vue'
 import Page2 from './components/Page2.vue'
 
-function addPrefix(path) {
-  return `/app/${import.meta.env.VITE_APP_NAME}/${path}`
-}
-
 const routes = [
-  { path: '/', redirect: addPrefix('page1') },
   {
-    path: addPrefix('page1'),
-    component: Page1,
-  },
-  {
-    path: addPrefix('page2'),
-    component: Page2,
-  },
+    path: `/app/${import.meta.env.VITE_APP_NAME}`,
+    component: SubRouterView,
+    children: [
+      { path: '/', redirect: 'page1' },
+      {
+        path: 'page1',
+        component: Page1,
+      },
+      {
+        path: 'page2',
+        component: Page2,
+      },
+    ]
+  }
 ]
 
 export default routes
