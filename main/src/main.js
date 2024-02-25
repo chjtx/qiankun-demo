@@ -11,7 +11,9 @@ const router = createRouter({
 })
 
 registerMicroApps(microRoutes)
+
 start({
+  prefetch: false,
   getTemplate(tpl) {
     const name = /data-qiankun_microapp_name=['"]([^'"]+)['"]/.exec(tpl)?.[1]
     if (name) {
@@ -31,6 +33,9 @@ start({
         },
         unmount: () => {
           console.log('purehtml unmount');
+          if (window[name].destroy) {
+            window[name].destroy()
+          }
           return Promise.resolve();
         },
       }
@@ -39,7 +44,7 @@ start({
   },
   async fetch(url, ...args) {
     // 使用script标签加载脚本
-    if (import.meta.env.DEV && (url.indexOf('@vite/client') > -1 || url.indexOf('.js') > -1)) {
+    if (url.indexOf('@vite/client') > -1 || url.indexOf('.js') > -1) {
       const script = document.createElement('script')
       script.type = 'module'
       script.src = url

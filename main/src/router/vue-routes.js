@@ -1,7 +1,7 @@
 import Main from '../views/MainApp.vue'
 import One from '../views/MainOne.vue'
 import Two from '../views/MainTwo.vue'
-import Empty from '../components/Empty.vue'
+import { Empty } from 'common'
 
 const routes = [
   { path: '/', redirect: '/main/one' },

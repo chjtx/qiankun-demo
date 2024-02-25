@@ -6,11 +6,11 @@
 </template>
 
 <script setup>
-import { addPrefix } from '../routes.js'
+import { addRoutePrefix } from '../utils.js'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function to(path) {
-  router.push(addPrefix(path))
+  router.push(addRoutePrefix(path))
 }
 </script>

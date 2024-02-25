@@ -1,5 +1,7 @@
-import SubRouterView from './SubRouterView.vue'
+import SubRouterView from './components/SubRouterView.vue'
+import Empty from './components/Empty.vue'
 
 export {
-  SubRouterView
+  SubRouterView,
+  Empty
 }
