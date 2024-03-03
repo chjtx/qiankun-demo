@@ -66,7 +66,13 @@ npm run build
 ## 注意事项
 
 - 路由命名尽量与组件文件位置保持一致，长得丑没关系，重要的是方便维护，工程越大，找文件成本越高
-- 对外共享的组件内部引其它文件时要用相对路径，不能用`@`开头的路径，避免调用组件方找不到位置
+- 对外共享的组件内部`import`其它文件时要用相对路径，不能用`@`开头的路径，避免调用组件方找不到位置
 - 乾坤`prefetch`配置为false，禁止预加载子应用避免开发环境非首个加载的子应用不生效
 
 ## 支持作者
+
+支持作分享更多前端技术，不需要打赏一块几毛，不需要请作者喝咖啡，只需要下载作者和他兄弟开发的游戏就ok
+
+<a href="https://tap.cn/s8QlN5Aa?channel=rep-rep_acpfb6g1hqa" target="_blank">TapTap平台《三国时代2》</a>
+
+<a href="https://l.tapdb.net/P6mpaCUn?channel=rep-rep_bz33hlxrcub" target="_blank">TapTap平台《仙湖棋局》</a>
