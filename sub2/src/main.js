@@ -3,6 +3,7 @@ import './style.css'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
 import routes from './routes.js'
+import 'element-plus/es/components/message/style/css'
 
 const appName = import.meta.env.VITE_APP_NAME
 let router = null

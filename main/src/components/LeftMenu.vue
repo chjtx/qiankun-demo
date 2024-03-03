@@ -25,9 +25,9 @@ function handleSelect(key) {
       <template #title>
         <span>子应用1-主应用管理菜单</span>
       </template>
-      <el-menu-item index="/app/sub1/page1">子菜单1-1</el-menu-item>
-      <el-menu-item index="/app/sub1/page2">子菜单1-2</el-menu-item>
+      <el-menu-item index="/app/sub1/views/Page1">子菜单1-1</el-menu-item>
+      <el-menu-item index="/app/sub1/views/Page2">子菜单1-2</el-menu-item>
     </el-sub-menu>
-    <el-menu-item index="/app/sub2/page1">子应用2-自行管理子菜单</el-menu-item>
+    <el-menu-item index="/app/sub2/views/Page1">子应用2-自行管理子菜单</el-menu-item>
   </el-menu>
 </template>

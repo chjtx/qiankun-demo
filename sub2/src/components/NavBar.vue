@@ -1,16 +1,19 @@
 <template>
-  <div>
-    <button @click="to('page1')">页面一</button>
-    <button @click="to('page2')">页面二</button>
-  </div>
+  <el-menu
+    :default-active="activeIndex"
+    mode="horizontal"
+    router
+  >
+    <el-menu-item :index="addRoutePrefix('Page1')">页面一</el-menu-item>
+    <el-menu-item :index="addRoutePrefix('Page2')">页面二</el-menu-item>
+  </el-menu>
 </template>
 
 <script setup>
 import { addRoutePrefix } from '../utils.js'
-import { useRouter } from 'vue-router'
-const router = useRouter()
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
-function to(path) {
-  router.push(addRoutePrefix(path))
-}
+const route = useRoute()
+const activeIndex = computed(() => route.path)
 </script>

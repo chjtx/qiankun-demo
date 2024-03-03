@@ -25,9 +25,9 @@
 </template>
 
 <script setup>
-import { ref, shallowRef } from 'vue'
-import { Task as Task1 } from 'sub1'
-import { Task as Task2 } from 'sub2'
+import { ref, shallowRef, defineAsyncComponent } from 'vue'
+const Task1 = defineAsyncComponent(() => import('sub1/Task.vue'))
+const Task2 = defineAsyncComponent(() => import('sub2/Task.vue'))
 
 const dialogVisible = ref(false)
 const dialogComponent = shallowRef(null)

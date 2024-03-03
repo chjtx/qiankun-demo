@@ -1,3 +1,3 @@
 <template>
-  <span>One</span>
+  <span>普通页面</span>
 </template>
