@@ -1,21 +1,21 @@
 import Main from '../views/MainApp.vue'
-import One from '../views/MainOne.vue'
-import Two from '../views/MainTwo.vue'
+import MainOne from '../views/MainOne.vue'
+import MainTwo from '../views/MainTwo.vue'
 import { Empty } from 'common'
 
 const routes = [
-  { path: '/', redirect: '/main/one' },
+  { path: '/', redirect: '/main/views/MainOne' },
   {
-    path: '/main',
+    path: '/main/views',
     component: Main,
     children: [
       {
-        path: 'one',
-        component: One
+        path: 'MainOne',
+        component: MainOne
       },
       {
-        path: 'two',
-        component: Two
+        path: 'MainTwo',
+        component: MainTwo
       },
     ]
   },

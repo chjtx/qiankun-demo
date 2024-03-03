@@ -2,7 +2,7 @@
 import MainLayout from './components/MainLayout.vue'
 import { ElConfigProvider } from 'element-plus'
 
-const size = 'small'
+const size = 'default'
 const zIndex = 3000
 </script>
 

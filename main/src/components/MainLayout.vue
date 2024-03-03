@@ -9,7 +9,7 @@ const route = useRoute()
   <el-container class="h-full">
     <el-header class="bg-cyan-900 text-white flex items-center">乾坤演示</el-header>
     <el-container>
-      <el-aside width="200px">
+      <el-aside>
         <LeftMenu></LeftMenu>
       </el-aside>
       <el-main>

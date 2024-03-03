@@ -15,7 +15,9 @@ export default defineConfig({
   plugins: [
     alias({
       entries: [
-        { find: 'common', replacement: resolve(__dirname, '../common') }
+        { find: 'common', replacement: resolve(__dirname, '../common') },
+        { find: 'sub1', replacement: resolve(__dirname, '../sub1/src/share-components') },
+        { find: 'sub2', replacement: resolve(__dirname, '../sub2/src/share-components') },
       ]
     }),
     vue(),
