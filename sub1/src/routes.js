@@ -5,7 +5,7 @@ import Page2 from './views/Page2.vue'
 const routes = [
   {
     path: '/',
-    redirect: `/app/${import.meta.env.VITE_APP_NAME}/views/page1`
+    redirect: `/app/${import.meta.env.VITE_APP_NAME}/views/Page1`
   },
   {
     path: `/app/${import.meta.env.VITE_APP_NAME}/views`,
